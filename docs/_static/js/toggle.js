@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem("css-mode", mode);
 
         var url_root = DOCUMENTATION_OPTIONS.URL_ROOT == "./" ? "" : DOCUMENTATION_OPTIONS.URL_ROOT;
-        var daysheet = $(`link[href="${url_root}_static/pygments.css"]`)[0].sheet;
-        daysheet.disabled = !isDay;
+        // var daysheet = $(`link[href="${url_root}_static/pygments.css"]`)[0].sheet;
+        // daysheet.disabled = !isDay;
 
         var nightsheet = $(`link[href="${url_root}_static/css/dark.css"]`)[0];
         if (!isDay && nightsheet === undefined) {

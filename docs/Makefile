@@ -50,7 +50,10 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
+	rm -rf _build # todo: check if we need this always
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	node syntax/index.js
+
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 

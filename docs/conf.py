@@ -17,8 +17,6 @@ import sys
 import os
 import re
 
-from pygments_lexer_solidity import SolidityLexer, YulLexer
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -28,10 +26,8 @@ ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, os.path.join(ROOT_PATH, 'ext'))
 
 def setup(sphinx):
-    sphinx.add_lexer('Solidity', SolidityLexer)
-    sphinx.add_lexer('Yul', YulLexer)
-
     sphinx.add_css_file('css/custom.css')
+    sphinx.add_css_file('css/starry-night.css')
 
 # -- General configuration ------------------------------------------------
 
@@ -109,9 +105,8 @@ exclude_patterns = ['_build', 'contracts', 'types', 'examples', 'grammar']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
 
-highlight_language = 'Solidity'
+highlight_language = 'none'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
