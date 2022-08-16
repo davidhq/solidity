@@ -53,7 +53,7 @@ Let us rewrite the set example from the
 :ref:`libraries` section in this way, using file-level functions
 instead of library functions.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity ^0.8.13;
@@ -109,7 +109,7 @@ instead of library functions.
 It is also possible to extend built-in types in that way.
 In this example, we will use a library.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity ^0.8.13;

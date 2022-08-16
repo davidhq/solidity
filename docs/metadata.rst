@@ -31,7 +31,7 @@ reduce whitespace to a minimum and sort the keys of all objects to arrive at a
 unique formatting. Comments are not permitted and used here only for
 explanatory purposes.
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     {
       // Required: The version of the metadata format

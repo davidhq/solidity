@@ -73,7 +73,7 @@ Tutorial
 Overflow
 ========
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -122,7 +122,7 @@ Here, it reports the following:
 If we add ``require`` statements that filter out overflow cases,
 the SMTChecker proves that no overflow is reachable (by not reporting warnings):
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -160,7 +160,7 @@ Since ``f`` is indeed monotonically increasing, the SMTChecker proves that our
 property is correct. You are encouraged to play with the property and the function
 definition to see what results come out!
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -182,7 +182,7 @@ The following code searches for the maximum element of an unrestricted array of
 numbers, and asserts the property that the found element must be greater or
 equal every element in the array.
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -216,7 +216,7 @@ All the properties are correctly proven safe. Feel free to change the
 properties and/or add restrictions on the array to see different results.
 For example, changing the code to
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -268,7 +268,7 @@ Let us place a robot at position (0, 0). The robot can only move diagonally, one
 and cannot move outside the grid. The robot's state machine can be represented by the smart contract
 below.
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -319,7 +319,7 @@ We can also trick the SMTChecker into giving us a path to a certain position we
 think might be reachable.  We can add the property that (2, 4) is *not*
 reachable, by adding the following function.
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     function reach_2_4() public view {
         assert(!(x == 2 && y == 4));
@@ -368,7 +368,7 @@ In some cases, it is possible to automatically infer properties over state
 variables that are still true even if the externally called code can do
 anything, including reenter the caller contract.
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -511,7 +511,7 @@ allowed) of <source>:<contract> pairs in the CLI:
 and via the object ``settings.modelChecker.contracts`` in the :ref:`JSON input<compiler-api>`,
 which has the following form:
 
-.. code-block:: json
+.. code-block:: json2
 
     "contracts": {
         "source1.sol": ["contract1"],
@@ -750,7 +750,7 @@ the arguments.
 Using abstraction means loss of precise knowledge, but in many cases it does
 not mean loss of proving power.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;
@@ -797,7 +797,7 @@ location is erased.
 If the type is nested, the knowledge removal also includes all the prefix base
 types.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0;

@@ -86,7 +86,7 @@ The initial content of the VFS depends on how you invoke the compiler:
    you provide input in JSON format, containing, among other things, the content of all your source
    files:
 
-   .. code-block:: json
+   .. code-block:: json2
 
        {
            "language": "Solidity",
@@ -114,7 +114,7 @@ The initial content of the VFS depends on how you invoke the compiler:
    With Standard JSON it is also possible to tell the compiler to use the import callback to obtain
    the source code:
 
-   .. code-block:: json
+   .. code-block:: json2
 
        {
            "language": "Solidity",
@@ -165,7 +165,7 @@ Based on how the import path is specified, we can divide imports into two catego
   to be combined with the source unit name of the importing file.
 
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :caption: contracts/contract.sol
 
     import "./math/math.sol";
@@ -183,7 +183,7 @@ Direct Imports
 
 An import that does not start with ``./`` or ``../`` is a *direct import*.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     import "/project/lib/util.sol";         // source unit name: /project/lib/util.sol
     import "lib/util.sol";                  // source unit name: lib/util.sol
@@ -224,13 +224,13 @@ Relative Imports
 An import starting with ``./`` or ``../`` is a *relative import*.
 Such imports specify a path relative to the source unit name of the importing source unit:
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :caption: /project/lib/math.sol
 
     import "./util.sol" as util;    // source unit name: /project/lib/util.sol
     import "../token.sol" as token; // source unit name: /project/token.sol
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :caption: lib/math.sol
 
     import "./util.sol" as util;    // source unit name: lib/util.sol
@@ -283,7 +283,7 @@ If your import paths are already normalized, you can expect the above algorithm 
 intuitive results.
 Here are some examples of what you can expect if they are not:
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :caption: lib/src/../contract.sol
 
     import "./util/./util.sol";         // source unit name: lib/src/../util/util.sol
@@ -517,7 +517,7 @@ and run the compiler with:
 
 you can use the following in your source file:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     import "github.com/ethereum/dapp-bin/library/math.sol"; // source unit name: dapp-bin/library/math.sol
 
@@ -584,7 +584,7 @@ Here are the detailed rules governing the behaviour of remappings:
 
          solc ./=a/ /project/=b/ /project/contract.sol # source unit name: /project/contract.sol
 
-     .. code-block:: solidity
+     .. code-block:: solidity2
          :caption: /project/contract.sol
 
          import "./util.sol" as util; // source unit name: b/util.sol
@@ -596,7 +596,7 @@ Here are the detailed rules governing the behaviour of remappings:
 
          solc /project/=/contracts/ /project/contract.sol --base-path /project # source unit name: contract.sol
 
-     .. code-block:: solidity
+     .. code-block:: solidity2
          :caption: /project/contract.sol
 
          import "util.sol" as util; // source unit name: util.sol
@@ -621,7 +621,7 @@ Here are the detailed rules governing the behaviour of remappings:
 
          solc /project/=/contracts /project/contract.sol # source unit name: /project/contract.sol
 
-     .. code-block:: solidity
+     .. code-block:: solidity2
          :caption: /project/contract.sol
 
          import "/project/util.sol" as util; // source unit name: /contractsutil.sol

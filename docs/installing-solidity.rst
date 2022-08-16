@@ -231,7 +231,7 @@ The ``solc-bin`` repository contains several top-level directories, each represe
 Each one contains a ``list.json`` file listing the available binaries. For example in
 ``emscripten-wasm32/list.json`` you will find the following information about version 0.7.4:
 
-.. code-block:: json
+.. code-block:: json2
 
     {
       "path": "solc-emscripten-wasm32-v0.7.4+commit.3f05b770.js",

@@ -101,7 +101,7 @@ the sequence:
 
 or the equivalent Yul
 
-.. code-block:: yul
+.. code-block:: yul2
 
     let x := calldataload(0)
     mstore(x, 100)
@@ -116,7 +116,7 @@ the instruction doesn't write to a certain location.
 
 For example,
 
-.. code-block:: yul
+.. code-block:: yul2
 
     let x := calldataload(0)
     mstore(x, 100)
@@ -164,7 +164,7 @@ is used as replacement if it is smaller. If a basic block is split at a
 ``JUMPI`` and during the analysis, the condition evaluates to a constant,
 the ``JUMPI`` is replaced based on the value of the constant. Thus code like
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     uint x = 7;
     data[7] = 9;
@@ -175,7 +175,7 @@ the ``JUMPI`` is replaced based on the value of the constant. Thus code like
 
 simplifies to this:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     data[7] = 9;
     return 1;
@@ -461,7 +461,7 @@ so that the following expressions still only need to reference SSA variables.
 
 An example transformation is the following:
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let a := calldataload(0)
@@ -477,7 +477,7 @@ An example transformation is the following:
 When all the following transformation steps are applied, the program will look
 as follows:
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let _1 := 0
@@ -527,7 +527,7 @@ as arguments.
 
 The above would be transformed into
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let _1 := 0x20
@@ -567,7 +567,7 @@ reassigned variables are replaced by the newly declared variables.
 
 Example:
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let a := 1
@@ -577,7 +577,7 @@ Example:
 
 is transformed to
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let a_1 := 1
@@ -622,7 +622,7 @@ RedundantAssignEliminator
 The SSA transform always generates an assignment of the form ``a := a_i``, even though
 these might be unnecessary in many cases, like the following example:
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let a := 1
@@ -633,7 +633,7 @@ these might be unnecessary in many cases, like the following example:
 
 The SSA transform converts this snippet to the following:
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let a_1 := 1
@@ -649,7 +649,7 @@ The Redundant Assign Eliminator removes all the three assignments to ``a``, beca
 the value of ``a`` is not used and thus turn this
 snippet into strict SSA form:
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         let a_1 := 1
@@ -996,7 +996,7 @@ inner block at the appropriate place in the outer block. It depends on the
 FunctionGrouper and does not flatten the outermost block to keep the form
 produced by the FunctionGrouper.
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         {
@@ -1010,7 +1010,7 @@ produced by the FunctionGrouper.
 
 is transformed to
 
-.. code-block:: yul
+.. code-block:: yul2
 
     {
         {
@@ -1052,7 +1052,7 @@ If a function, say, ``function f(a, b) { sstore (a, b) }``, is called with liter
 example, ``f(x, 5)``, where ``x`` is an identifier, it could be specialized by creating a new
 function ``f_1`` that takes only one argument, i.e.,
 
-.. code-block:: yul
+.. code-block:: yul2
 
     function f_1(a_1) {
         let b_1 := 5
@@ -1077,7 +1077,7 @@ This step removes unused parameters in a function.
 If a parameter is unused, like ``c`` and ``y`` in, ``function f(a,b,c) -> x, y { x := div(a,b) }``, we
 remove the parameter and create a new "linking" function as follows:
 
-.. code-block:: yul
+.. code-block:: yul2
 
     function f(a,b) -> x { x := div(a,b) }
     function f2(a,b,c) -> x, y { x := f(a,b) }
@@ -1210,14 +1210,14 @@ fresh variable declarations.
 
 The SSA transform rewrites
 
-.. code-block:: yul
+.. code-block:: yul2
 
     let a := calldataload(0)
     mstore(a, 1)
 
 to
 
-.. code-block:: yul
+.. code-block:: yul2
 
     let a_1 := calldataload(0)
     let a := a_1
@@ -1230,7 +1230,7 @@ whenever ``a`` was referenced. The SSA transform changes statements
 of this form by just swapping out the declaration and the assignment. The above
 snippet is turned into
 
-.. code-block:: yul
+.. code-block:: yul2
 
     let a := calldataload(0)
     let a_1 := a

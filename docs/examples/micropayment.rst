@@ -40,7 +40,7 @@ using `web3.js <https://github.com/ethereum/web3.js>`_ and
 `MetaMask <https://metamask.io>`_, using the method described in `EIP-712 <https://github.com/ethereum/EIPs/pull/712>`_,
 as it provides a number of other security benefits.
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     /// Hashing first makes things easier
     var hash = web3.utils.sha3("message to sign");
@@ -90,7 +90,7 @@ library provides a function called ``soliditySHA3`` that mimics the behaviour of
 Solidity's ``keccak256`` function applied to arguments encoded using ``abi.encodePacked``.
 Here is a JavaScript function that creates the proper signature for the ``ReceiverPays`` example:
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     // recipient is the address that should be paid.
     // amount, in wei, specifies how much ether should be sent.
@@ -139,7 +139,7 @@ The functions ``prefixed`` and ``recoverSigner`` do this in the ``claimPayment``
 The full contract
 -----------------
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :force:
 
     // SPDX-License-Identifier: GPL-3.0
@@ -272,7 +272,7 @@ to prevent a message intended for one payment channel from being used for a diff
 
 Here is the modified JavaScript code to cryptographically sign a message from the previous section:
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     function constructPaymentMessage(contractAddress, amount) {
         return abi.soliditySHA3(
@@ -336,7 +336,7 @@ so it is important that Bob closes the channel before the expiration is reached.
 The full contract
 -----------------
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :force:
 
     // SPDX-License-Identifier: GPL-3.0
@@ -456,7 +456,7 @@ We'll use the `ethereumjs-util <https://github.com/ethereumjs/ethereumjs-util>`_
 library to write this verification. The final step can be done a number of ways,
 and we use JavaScript. The following code borrows the ``constructPaymentMessage`` function from the signing **JavaScript code** above:
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     // this mimics the prefixing behavior of the eth_sign JSON-RPC method.
     function prefixed(hash) {

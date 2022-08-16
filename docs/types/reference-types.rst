@@ -64,7 +64,7 @@ Data locations are not only relevant for persistency of data, but also for the s
   variables of storage struct type, even if the local variable
   itself is just a reference.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.5.0 <0.9.0;
@@ -182,7 +182,7 @@ The function returns a single ``bytes memory`` array that contains the contents 
 If you want to use string parameters or other types that are not implicitly convertible to ``bytes``, you need to convert them to ``bytes`` or ``bytes1``/.../``bytes32`` first.
 
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity ^0.8.12;
@@ -214,7 +214,7 @@ or create a new memory array and copy every element.
 As all variables in Solidity, the elements of newly allocated arrays are always initialized
 with the :ref:`default value<default-value>`.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.16 <0.9.0;
@@ -253,7 +253,7 @@ In the example below, the type of ``[1, 2, 3]`` is
 you want the result to be a ``uint[3] memory`` type, you need to convert
 the first element to ``uint``.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.16 <0.9.0;
@@ -275,7 +275,7 @@ Since fixed-size memory arrays of different type cannot be converted into each o
 (even if the base types can), you always have to specify a common base type explicitly
 if you want to use two-dimensional array literals:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.16 <0.9.0;
@@ -292,7 +292,7 @@ if you want to use two-dimensional array literals:
 Fixed size memory arrays cannot be assigned to dynamically-sized
 memory arrays, i.e. the following is not possible:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -312,7 +312,7 @@ complications because of how arrays are passed in the ABI.
 If you want to initialize dynamically-sized arrays, you have to assign the
 individual elements:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.16 <0.9.0;
@@ -370,7 +370,7 @@ Array Members
     that return dynamic arrays, make sure to use an EVM that is set to
     Byzantium mode.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.6.0 <0.9.0;
@@ -478,7 +478,7 @@ A dangling reference is a reference that points to something that no longer exis
 moved without updating the reference. A dangling reference can for example occur, if you store a
 reference to an array element in a local variable and then ``.pop()`` from the containing array:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0 <0.9.0;
@@ -510,7 +510,7 @@ Note that Solidity does not allow to declare references to value types in storag
 of explicit dangling references are restricted to nested reference types. However, dangling references
 can also occur temporarily when using complex expressions in tuple assignments:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0 <0.9.0;
@@ -550,7 +550,7 @@ You need to take particular care when dealing with references to elements of
 ``bytes`` arrays, since a ``.push()`` on a bytes array may switch :ref:`from short
 to long layout in storage<bytes-and-string>`.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.0 <0.9.0;
@@ -617,7 +617,7 @@ they only exist in intermediate expressions.
 
 Array slices are useful to ABI-decode secondary data passed in function parameters:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.8.5 <0.9.0;
@@ -656,7 +656,7 @@ Structs
 Solidity provides a way to define new types in the form of structs, which is
 shown in the following example:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.6.0 <0.9.0;

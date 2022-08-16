@@ -55,7 +55,7 @@ Surround top level declarations in Solidity source with two blank lines.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -76,7 +76,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -98,7 +98,7 @@ Blank lines may be omitted between groups of related one-liners (such as stub fu
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.6.0 <0.9.0;
@@ -121,7 +121,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.6.0 <0.9.0;
@@ -159,7 +159,7 @@ Function Calls
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     thisFunctionCallIsReallyLong(
         longArgument1,
@@ -169,7 +169,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     thisFunctionCallIsReallyLong(longArgument1,
                                   longArgument2,
@@ -201,7 +201,7 @@ Assignment Statements
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     thisIsALongNestedMapping[being][set][toSomeValue] = someFunction(
         argument1,
@@ -212,7 +212,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     thisIsALongNestedMapping[being][set][toSomeValue] = someFunction(argument1,
                                                                        argument2,
@@ -223,7 +223,7 @@ Event Definitions and Event Emitters
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     event LongAndLotsOfArgs(
         address sender,
@@ -243,7 +243,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     event LongAndLotsOfArgs(address sender,
                             address recipient,
@@ -269,7 +269,7 @@ Import statements should always be placed at the top of the file.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -287,7 +287,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -323,7 +323,7 @@ Within a grouping, place the ``view`` and ``pure`` functions last.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.0 <0.9.0;
@@ -361,7 +361,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.0 <0.9.0;
@@ -400,19 +400,19 @@ Immediately inside parenthesis, brackets or braces, with the exception of single
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     spam(ham[1], Coin({name: "ham"}));
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     spam( ham[ 1 ], Coin( { name: "ham" } ) );
 
 Exception:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function singleLine() public { spam(); }
 
@@ -420,13 +420,13 @@ Immediately before a comma, semicolon:
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function spam(uint i, Coin coin) public;
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function spam(uint i , Coin coin) public ;
 
@@ -434,7 +434,7 @@ More than one space around an assignment or other operator to align with another
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     x = 1;
     y = 2;
@@ -442,7 +442,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     x            = 1;
     y            = 2;
@@ -452,7 +452,7 @@ Don't include a whitespace in the receive and fallback functions:
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     receive() external payable {
         ...
@@ -464,7 +464,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     receive () external payable {
         ...
@@ -488,7 +488,7 @@ should:
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -502,7 +502,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -525,7 +525,7 @@ block and the opening brace.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     if (...) {
         ...
@@ -537,7 +537,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     if (...)
     {
@@ -555,14 +555,14 @@ braces is ok *if* the statement is contained on a single line.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     if (x < 10)
         x += 1;
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     if (x < 10)
         someArray.push(Coin({
@@ -576,7 +576,7 @@ to the rules of other block-like structures.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     if (x < 3) {
         x += 1;
@@ -594,7 +594,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     if (x < 3) {
         x += 1;
@@ -616,7 +616,7 @@ The opening brace should be preceded by a single space.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function increment(uint x) public pure returns (uint) {
         return x + 1;
@@ -628,7 +628,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function increment(uint x) public pure returns (uint)
     {
@@ -656,7 +656,7 @@ The modifier order for a function should be:
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function balance(uint from) public view override returns (uint)  {
         return balanceOf[from];
@@ -668,7 +668,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function balance(uint from) public override view returns (uint)  {
         return balanceOf[from];
@@ -685,7 +685,7 @@ the same indentation level as the function declaration.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function thisFunctionHasLotsOfArguments(
         address a,
@@ -702,7 +702,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function thisFunctionHasLotsOfArguments(address a, address b, address c,
         address d, address e, address f) public {
@@ -733,7 +733,7 @@ dropped to its own line.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function thisFunctionNameIsReallyLong(address x, address y, address z)
         public
@@ -759,7 +759,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function thisFunctionNameIsReallyLong(address x, address y, address z)
                                           public
@@ -787,7 +787,7 @@ Multiline output parameters and return statements should follow the same style r
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function thisFunctionNameIsReallyLong(
         address a,
@@ -812,7 +812,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function thisFunctionNameIsReallyLong(
         address a,
@@ -837,7 +837,7 @@ manner as modifiers if the function declaration is long or hard to read.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.0 <0.9.0;
@@ -875,7 +875,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.0 <0.9.0;
@@ -927,7 +927,7 @@ When declaring short functions with a single statement, it is permissible to do 
 
 Permissible:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function shortFunction() public { doSomething(); }
 
@@ -944,7 +944,7 @@ whitespace.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     mapping(uint => uint) map;
     mapping(address => bool) registeredAddresses;
@@ -953,7 +953,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     mapping (uint => uint) map;
     mapping( address => bool ) registeredAddresses;
@@ -968,13 +968,13 @@ the brackets.
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     uint[] x;
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     uint [] x;
 
@@ -986,14 +986,14 @@ Other Recommendations
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     str = "foo";
     str = "Hamlet says, 'To be or not to be...'";
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     str = 'bar';
     str = '"Be yourself; everyone else is already taken." -Oscar Wilde';
@@ -1002,7 +1002,7 @@ No:
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :force:
 
     x = 3;
@@ -1012,7 +1012,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :force:
 
     x=3;
@@ -1027,7 +1027,7 @@ No:
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     x = 2**3 + 5;
     x = 2*y + 3*z;
@@ -1035,7 +1035,7 @@ Yes:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     x = 2** 3 + 5;
     x = y+z;
@@ -1121,7 +1121,7 @@ As shown in the example below, if the contract name is ``Congress`` and the libr
 
 Yes:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.0 <0.9.0;
@@ -1146,7 +1146,7 @@ Yes:
 
 and in ``Congress.sol``:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.0 <0.9.0;
@@ -1160,7 +1160,7 @@ and in ``Congress.sol``:
 
 No:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.0 <0.9.0;
@@ -1185,7 +1185,7 @@ No:
 
 and in ``Congress.sol``:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity ^0.7.0;
@@ -1271,7 +1271,7 @@ they should be used directly above function declarations or statements.
 For example, the contract from :ref:`a simple smart contract <simple-smart-contract>` with the comments
 added looks like the one below:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.4.16 <0.9.0;

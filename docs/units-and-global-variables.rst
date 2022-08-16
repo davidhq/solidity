@@ -9,7 +9,7 @@ Ether Units
 
 A literal number can take a suffix of ``wei``, ``gwei`` or ``ether`` to specify a subdenomination of Ether, where Ether numbers without a postfix are assumed to be Wei.
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :force:
 
     assert(1 wei == 1);
@@ -48,7 +48,7 @@ library has to be updated by an external oracle.
 These suffixes cannot be applied to variables. For example, if you want to
 interpret a function parameter in days, you can in the following way:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     function f(uint start, uint daysAfter) public {
         if (block.timestamp >= start + daysAfter * 1 days) {

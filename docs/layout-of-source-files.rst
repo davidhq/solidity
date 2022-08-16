@@ -183,7 +183,7 @@ a `default export <https://developer.mozilla.org/en-US/docs/web/javascript/refer
 
 At a global level, you can use import statements of the following form:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     import "filename";
 
@@ -198,7 +198,7 @@ symbols explicitly.
 The following example creates a new global symbol ``symbolName`` whose members are all
 the global symbols from ``"filename"``:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     import * as symbolName from "filename";
 
@@ -206,7 +206,7 @@ which results in all global symbols being available in the format ``symbolName.s
 
 A variant of this syntax that is not part of ES6, but possibly useful is:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
   import "filename" as symbolName;
 
@@ -216,7 +216,7 @@ If there is a naming collision, you can rename symbols while importing. For exam
 the code below creates new global symbols ``alias`` and ``symbol2`` which reference
 ``symbol1`` and ``symbol2`` from inside ``"filename"``, respectively.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     import {symbol1 as alias, symbol2} from "filename";
 
@@ -256,7 +256,7 @@ Comments
 
 Single-line comments (``//``) and multi-line comments (``/*...*/``) are possible.
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // This is a single-line comment.
 

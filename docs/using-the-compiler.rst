@@ -131,7 +131,7 @@ On the command line, you can select the EVM version as follows:
 In the :ref:`standard JSON interface <compiler-api>`, use the ``"evmVersion"``
 key in the ``"settings"`` field:
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     {
       "sources": {/* ... */},
@@ -197,7 +197,7 @@ Comments are of course not permitted and used here only for explanatory purposes
 Input Description
 -----------------
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     {
       // Required: Source code language. Currently supported are "Solidity" and "Yul".
@@ -445,7 +445,7 @@ Input Description
 Output Description
 ------------------
 
-.. code-block:: javascript
+.. code-block:: javascript2
 
     {
       // Optional: not present if no errors/warnings/infos were encountered
@@ -758,7 +758,7 @@ Example
 
 Assume that you have the following contract in ``Source.sol``:
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     pragma solidity >=0.6.0 <0.6.4;
     // This will not compile after 0.7.0
@@ -812,7 +812,7 @@ It is recommended to explicitly specify the upgrade modules by using ``--modules
 The command above applies all changes as shown below. Please review them carefully (the pragmas will
 have to be updated manually.)
 
-.. code-block:: Solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.0 <0.9.0;

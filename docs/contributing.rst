@@ -192,7 +192,7 @@ The test suite compiles and checks them against the given expectations.
 
 For example: ``./test/libsolidity/syntaxTests/double_stateVariable_declaration.sol``
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     contract test {
         uint256 variable;
@@ -211,7 +211,7 @@ In the above example, the state variable ``variable`` was declared twice, which 
 The ``isoltest`` tool is used for these tests and you can find it under ``./build/test/tools/``. It is an interactive tool which allows
 editing of failing contracts using your preferred text editor. Let's try to break this test by removing the second declaration of ``variable``:
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     contract test {
         uint256 variable;
@@ -249,7 +249,7 @@ All of these options apply to the current contract, except ``quit`` which stops 
 
 Automatically updating the test above changes it to
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     contract test {
         uint256 variable;

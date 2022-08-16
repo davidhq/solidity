@@ -239,7 +239,7 @@ Examples
 
 Given the contract:
 
-.. code-block:: solidity
+.. code-block:: solidity2
     :force:
 
     // SPDX-License-Identifier: GPL-3.0
@@ -516,7 +516,7 @@ call.
 As an example, let us consider the following contract whose ``transfer`` function always
 reverts with a custom error of "insufficient balance":
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity ^0.8.4;
@@ -605,7 +605,7 @@ Errors look as follows:
 
 For example,
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity ^0.8.4;
@@ -622,7 +622,7 @@ For example,
 
 would result in the JSON:
 
-.. code-block:: json
+.. code-block:: json2
 
     [{
     "type":"error",
@@ -659,7 +659,7 @@ which is of array type and has the same structure as the top-level object except
 
 As an example, the code
 
-.. code-block:: solidity
+.. code-block:: solidity2
 
     // SPDX-License-Identifier: GPL-3.0
     pragma solidity >=0.7.5 <0.9.0;
@@ -674,7 +674,7 @@ As an example, the code
 
 would result in the JSON:
 
-.. code-block:: json
+.. code-block:: json2
 
     [
       {
